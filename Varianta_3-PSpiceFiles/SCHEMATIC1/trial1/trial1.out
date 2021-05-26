@@ -1,0 +1,698 @@
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "trial1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Teo\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 800us 0 
+.STEP LIN PARAM set10 0 1 0.33 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source VARIANTA_3
+X_POT12         N21181 N21181 N23009 POT PARAMS: SET={set10} VALUE=5k
+R_R12         N21061 N23009 R_R12 5.76k TC=0,0 
+.model        R_R12 RES R=1 DEV=1% TC1=0 TC2=0
+V_V1         VCC 0 5V
+C_C11         N21181 0 C_C11 10n  TC=0,0 
+.model        C_C11 CAP C=1 DEV=10% TC1=0 TC2=0 VC1=0 VC2=0
+C_C12         N21257 0 C_C12 10n  TC=0,0 
+.model        C_C12 CAP C=1 DEV=10% TC1=0 TC2=0 VC1=0 VC2=0
+R_R11         VCC N22047 R_R11 5.76k TC=0,0 
+.model        R_R11 RES R=1 DEV=1% TC1=0 TC2=0
+X_X1         0 N21181 N21215 VCC N21257 N21181 N21061 VCC 555D PARAMS:
++  MAXFREQ=3E6
+X_POT11         N21061 N22047 N22047 POT PARAMS: SET={set10} VALUE=11k
+R_R23         N23999 OUT R_R23 6k TC=0,0 
+.model        R_R23 RES R=1 DEV=5% TC1=0 TC2=0
+R_R22         0 N23999 R_R22 10k TC=0,0 
+.model        R_R22 RES R=1 DEV=5% TC1=0 TC2=0
+R_R24         0 OUT R_R24 1k TC=0,0 
+.model        R_R24 RES R=1 DEV=5% TC1=0 TC2=0
+V_V2         VIN 0 9V
+X_POT21         N21215 N30373 N251770 POT PARAMS: SET={set20} VALUE=30k
+X_U1         N30373 N23999 VIN 0 OUT HA-5020/HA
+R_R21         0 N251770 R_R21 10k TC=0,0 
+.model        R_R21 RES R=1 DEV=5% TC1=0 TC2=0
+.PARAM  set10=1 set20=1
+
+**** RESUMING trial1.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node VCC
+*
+* Moving X_X1.u1:CLRBAR from analog node VCC to new digital node VCC$AtoD
+X$VCC_AtoD1
++ VCC
++ VCC$AtoD
++ VCC
++ 0
++ atod_555
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node X_X1.qb
+*
+* Moving X_X1.u1:QBAR1 from analog node X_X1.qb to new digital node X_X1.qb$DtoA
+X$X_X1.qb_DtoA1
++ X_X1.qb$DtoA
++ X_X1.qb
++ VCC
++ 0
++ dtoa_555
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N21215
+*
+* Moving X_X1.u1:Q1 from analog node N21215 to new digital node N21215$DtoA
+X$N21215_DtoA1
++ N21215$DtoA
++ N21215
++ VCC
++ 0
++ dtoa_555
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.nchan      
+               NMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    0            
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    1.000000E-12 
+        CGDO    1.000000E-12 
+        CGBO    1.000000E-12 
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               R_R12           R_R11           R_R23           R_R22           
+           R    1               1               1               1            
+
+
+               R_R24           R_R21           
+           R    1               1            
+
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     Capacitor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               C_C11           C_C12           
+           C    1               1            
+
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               din555          
+      S0NAME 0               
+       S0TSW  700.000000E-12 
+       S0RLO  100            
+       S0RHI    1.000000E+06 
+      S1NAME 1               
+       S1TSW  700.000000E-12 
+       S1RLO    1.000000E+06 
+       S1RHI  300            
+      S2NAME x               
+       S2TSW  700.000000E-12 
+       S2RLO  200            
+       S2RHI  200            
+      S3NAME r               
+       S3TSW  700.000000E-12 
+       S3RLO  200            
+       S3RHI  200            
+      S4NAME f               
+       S4TSW  700.000000E-12 
+       S4RLO  200            
+       S4RHI  200            
+      S5NAME z               
+       S5TSW  700.000000E-12 
+       S5RLO  200.000000E+03 
+       S5RHI  200.000000E+03 
+
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.cmp        do555           
+    TIMESTEP  100.000000E-12  100.000000E-12 
+      S0NAME 0               1               
+       S0VHI                   18            
+       S0VLO -500                .4          
+      S1NAME 1               0               
+       S1VHI  500                .4          
+       S1VLO                   -1.5          
+
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     Digital Gated FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.t_srff     
+    TPDQLHMN    0            
+    TPDQLHTY    0            
+    TPDQLHMX    0            
+    TPDQHLMN    0            
+    TPDQHLTY    0            
+    TPDQHLMX    0            
+    TPGQLHMN    0            
+    TPGQLHTY    0            
+    TPGQLHMX    0            
+    TPGQHLMN    0            
+    TPGQHLTY    0            
+    TPGQHLMX    0            
+   TPPCQLHMN   48.000000E-09 
+   TPPCQLHTY  120.000000E-09 
+   TPPCQLHMX  192.000000E-09 
+   TPPCQHLMN    0            
+   TPPCQHLTY    0            
+   TPPCQHLMX    0            
+      TWGHMN    0            
+      TWGHTY    0            
+      TWGHMX    0            
+     TWPCLMN    0            
+     TWPCLTY    0            
+     TWPCLMX    0            
+     TSUDGMN    0            
+     TSUDGTY    0            
+     TSUDGMX    0            
+   TSUPCGHMN    0            
+   TSUPCGHTY    0            
+   TSUPCGHMX    0            
+      THDGMN    0            
+      THDGTY    0            
+      THDGMX    0            
+
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     Digital Delay Line MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.dlymod     
+       DLYMN  166.666700E-09 
+       DLYTY  166.666700E-09 
+       DLYMX  166.666700E-09 
+
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.io_555     io_std          io_stm          
+        DRVL  104             104               0            
+        DRVH   96.4            96.4             0            
+       AtoD1 atod_555        AtoD_STD                        
+       AtoD2 atod_555        AtoD_STD_NX                     
+       AtoD3 atod_555        AtoD_STD                        
+       AtoD4 atod_555        AtoD_STD_NX                     
+       DtoA1 dtoa_555        DtoA_STD        DtoA_STM        
+       DtoA2 dtoa_555        DtoA_STD        DtoA_STM        
+       DtoA3 dtoa_555        DtoA_STD        DtoA_STM        
+       DtoA4 dtoa_555        DtoA_STD        DtoA_STM        
+      TSWHL1                    1.511000E-09                 
+      TSWHL2                    1.487000E-09                 
+      TSWHL3                    1.511000E-09                 
+      TSWHL4                    1.487000E-09                 
+      TSWLH1                    3.517000E-09                 
+      TSWLH2                    3.564000E-09                 
+      TSWLH3                    3.517000E-09                 
+      TSWLH4                    3.564000E-09                 
+       TPWRT  100.000000E+03  100.000000E+03  100.000000E+03 
+
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15658): Unable to converge all DtoA interface devices
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM SET10 =    0     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)    4.0351  (  VCC)    5.0000  (  VIN)    9.0000  (N21061)     .0119     
+
+(N21181)     .0119 (N21215)    2.4936 (N21257)    3.3333 (N22047)    3.2857     
+
+(N23009)     .0119 (N23999)    2.4900 (N30373)    2.4936 (X_U1.4)    2.4936     
+
+(X_U1.5)    4.0480 (X_U1.6)    2.4936 (X_U1.7)    4.0480 (X_U1.8)    2.4936     
+
+(X_U1.9)    4.0421 ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+(N251770)     .6234                   (X_U1.10)    4.0480                       
+
+(X_U1.11)    4.0480                   (X_U1.12)    2.4936                       
+
+(X_U1.13)    4.0480                   (X_U1.14)    2.4901                       
+
+(X_U1.15)    2.4911                   (X_U1.16)    4.0480                       
+
+(X_X1.qb)    2.5000                   (X_X1.botm)    1.6667                 
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N21215$DtoA) : 1  (  X_X1.r) : 0     ( X_X1.sd) : 1     ( X_X1.rd) : 0         
+
+(X_X1.strt) : 0    (  X_X1.s) : 1     ( X_X1.hi) : 1     (VCC$AtoD) : 1         
+
+(X_X1.qb$DtoA) : 0                    
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.534E-02
+    V_V2        -8.000E-03
+    X_U1.VIO     1.472E-06
+    X$DIGIFPWR.VDPWR  -5.000E-06
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   1.99E-01  WATTS
+
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15658): Unable to converge all DtoA interface devices
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM SET10 =     .33  
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)    4.0351  (  VCC)    5.0000  (  VIN)    9.0000  (N21061)     .0152     
+
+(N21181)     .0152 (N21215)    2.4936 (N21257)    3.3333 (N22047)    2.8132     
+
+(N23009)     .0152 (N23999)    2.4900 (N30373)    2.4936 (X_U1.4)    2.4936     
+
+(X_U1.5)    4.0480 (X_U1.6)    2.4936 (X_U1.7)    4.0480 (X_U1.8)    2.4936     
+
+(X_U1.9)    4.0421 ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+(N251770)     .6234                   (X_U1.10)    4.0480                       
+
+(X_U1.11)    4.0480                   (X_U1.12)    2.4936                       
+
+(X_U1.13)    4.0480                   (X_U1.14)    2.4901                       
+
+(X_U1.15)    2.4911                   (X_U1.16)    4.0480                       
+
+(X_X1.qb)    2.5000                   (X_X1.botm)    1.6667                 
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N21215$DtoA) : 1  (  X_X1.r) : 0     ( X_X1.sd) : 1     ( X_X1.rd) : 0         
+
+(X_X1.strt) : 0    (  X_X1.s) : 1     ( X_X1.hi) : 1     (VCC$AtoD) : 1         
+
+(X_X1.qb$DtoA) : 0                    
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.542E-02
+    V_V2        -8.000E-03
+    X_U1.VIO     1.472E-06
+    X$DIGIFPWR.VDPWR  -5.000E-06
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   1.99E-01  WATTS
+
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15658): Unable to converge all DtoA interface devices
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM SET10 =     .66  
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)    4.0351  (  VCC)    5.0000  (  VIN)    9.0000  (N21061)     .0211     
+
+(N21181)     .0211 (N21215)    2.4936 (N21257)    3.3333 (N22047)    1.9812     
+
+(N23009)     .0211 (N23999)    2.4900 (N30373)    2.4936 (X_U1.4)    2.4936     
+
+(X_U1.5)    4.0480 (X_U1.6)    2.4936 (X_U1.7)    4.0480 (X_U1.8)    2.4936     
+
+(X_U1.9)    4.0421 ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+(N251770)     .6234                   (X_U1.10)    4.0480                       
+
+(X_U1.11)    4.0480                   (X_U1.12)    2.4936                       
+
+(X_U1.13)    4.0480                   (X_U1.14)    2.4901                       
+
+(X_U1.15)    2.4911                   (X_U1.16)    4.0480                       
+
+(X_X1.qb)    2.5000                   (X_X1.botm)    1.6667                 
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N21215$DtoA) : 1  (  X_X1.r) : 0     ( X_X1.sd) : 1     ( X_X1.rd) : 0         
+
+(X_X1.strt) : 0    (  X_X1.s) : 1     ( X_X1.hi) : 1     (VCC$AtoD) : 1         
+
+(X_X1.qb$DtoA) : 0                    
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.557E-02
+    V_V2        -8.000E-03
+    X_U1.VIO     1.472E-06
+    X$DIGIFPWR.VDPWR  -5.000E-06
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   2.00E-01  WATTS
+
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$X_X1.qb_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15202): X$N21215_DtoA1.n1 forced to X state for bias point
+
+WARNING(ORPSIM-15658): Unable to converge all DtoA interface devices
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM SET10 =     .99  
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)    4.0351  (  VCC)    5.0000  (  VIN)    9.0000  (N21061)     .0341     
+
+(N21181)     .0341 (N21215)    2.4936 (N21257)    3.3333 (N22047)     .1271     
+
+(N23009)     .0341 (N23999)    2.4900 (N30373)    2.4936 (X_U1.4)    2.4936     
+
+(X_U1.5)    4.0480 (X_U1.6)    2.4936 (X_U1.7)    4.0480 (X_U1.8)    2.4936     
+
+(X_U1.9)    4.0421 ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+(N251770)     .6234                   (X_U1.10)    4.0480                       
+
+(X_U1.11)    4.0480                   (X_U1.12)    2.4936                       
+
+(X_U1.13)    4.0480                   (X_U1.14)    2.4901                       
+
+(X_U1.15)    2.4911                   (X_U1.16)    4.0480                       
+
+(X_X1.qb)    2.5000                   (X_X1.botm)    1.6667                 
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N21215$DtoA) : 1  (  X_X1.r) : 0     ( X_X1.sd) : 1     ( X_X1.rd) : 0         
+
+(X_X1.strt) : 0    (  X_X1.s) : 1     ( X_X1.hi) : 1     (VCC$AtoD) : 1         
+
+(X_X1.qb$DtoA) : 0                    
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.589E-02
+    V_V2        -8.000E-03
+    X_U1.VIO     1.472E-06
+    X$DIGIFPWR.VDPWR  -5.000E-06
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   2.01E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 05/22/20 17:00:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trial1"  [ e:\fuckultate\an ii\sem ii\biggest shit in the world\proiect pwm\version_3\varianta_3-pspicefiles
+
+
+ ****     JOB STATISTICS SUMMARY
+
+ ****     CURRENT STEP                     PARAM SET10 =     .99  
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       72.44
+  Total job time (using Solver 1)   =         .33
+

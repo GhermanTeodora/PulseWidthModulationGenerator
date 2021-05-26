@@ -1,0 +1,24 @@
+  Revised: Friday, May 22, 2020
+          Revision: 
+
+
+
+
+
+
+
+Bill Of Materials            May 22,2020      21:12:06	Page1
+
+Item	Quantity	Reference	Part	Value	Manufacturer	Vendor	Description
+______________________________________________
+
+1	2	C11,C12	10n	KEMET	Mouser electronics	Multilayer Ceramic Capacitors MLCC - Leaded .010UF 25.0V
+2	1	POT11	11k	Bourns	Mouser Electronics	Potentiometers 11K 3/4" Single Turn
+3	1	POT12	5k	Bourns	Mouser electronics	Potentiometers 5K 10% 12.5MM SQ CONTROL
+4	1	POT21	30k	Bourns	Mouser electronics	Trimmer Resistors - Through Hole 3/8" 30Kohms 10% 0.5Watts Square
+5	2	R11,R12	5.76k	Vishay / BC Components	Mouser electronics	Metal Film Resistors - Through Hole 400mW 5.76Kohms 1% SFR55 Historical p/n
+6	2	R21,R22	10k	Kamaya Inc.	DigiKey	RES 10K OHM 1/4W 5% AXIAL
+7	1	R23	6k	Stackpole Electronics Inc.	DigiKey	RES 6K OHM 3W 5% AXIAL
+8	1	R24	1k	Kamaya Inc.	DigiKey	RES 1K OHM 1/4W 5% AXIAL
+9	1	U1	HA-5020/HA	Texas Instruments	Mouser electronics	High Speed Operational Amplifiers 180MHz High Speed
+10	1	X1	555D	Diodes Incorporated	Mouser electronics	Timers & Support Products Automotive Grade Precision Timer
